@@ -1046,6 +1046,61 @@
             transition: all 0.2s ease;
         }
         .dl-verify-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); }
+
+        /* Ecosystem tables */
+        .dl-eco-card {
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 24px;
+        }
+        .dl-eco-header {
+            background: linear-gradient(135deg, #004d3d, var(--grn));
+            color: white; padding: 16px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .dl-eco-header h3 { font-family: 'Bitter', serif; font-size: 18px; font-weight: 700; margin: 0; }
+        .dl-eco-badge {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; padding: 4px 12px; border-radius: 4px;
+            background: rgba(255,255,255,0.2);
+        }
+        .dl-eco-table { width: 100%; border-collapse: collapse; }
+        .dl-eco-table td {
+            padding: 12px 20px; font-size: 13px; line-height: 1.6;
+            border-bottom: 1px solid #eee; vertical-align: top; color: var(--text);
+        }
+        .dl-eco-table tr:last-child td { border-bottom: none; }
+        .dl-eco-label {
+            font-weight: 700; font-size: 12px; color: var(--grn);
+            white-space: nowrap; width: 120px; letter-spacing: 0.3px;
+        }
+        .dl-eco-table tr:nth-child(even) td { background: #f8f7f4; }
+        .dl-eco-table .dl-cap-row td { background: var(--grn-light) !important; }
+        .dl-eco-tip {
+            position: relative; display: inline-block; cursor: help;
+        }
+        .dl-eco-tip-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 15px; height: 15px; border-radius: 50%;
+            background: var(--grn); color: white;
+            font-size: 9px; font-weight: 700; margin-left: 3px; vertical-align: middle;
+        }
+        .dl-eco-tip-text {
+            visibility: hidden; opacity: 0;
+            position: absolute; bottom: calc(100% + 8px); left: 50%;
+            transform: translateX(-50%); width: 250px;
+            background: #1a1a1a; color: white;
+            font-size: 12px; line-height: 1.5; padding: 10px 14px;
+            border-radius: 8px; z-index: 100;
+            transition: opacity 0.2s; pointer-events: none;
+        }
+        .dl-eco-tip-text::after {
+            content: ''; position: absolute; top: 100%; left: 50%;
+            transform: translateX(-50%); border: 6px solid transparent;
+            border-top-color: #1a1a1a;
+        }
+        .dl-eco-tip:hover .dl-eco-tip-text { visibility: visible; opacity: 1; }
+        .dl-eco-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        @media (max-width: 900px) { .dl-eco-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -1753,6 +1808,83 @@
                 </div>
                 <div class="dl-ic-kill"><strong>Kill gate:</strong> Nigeria refuses digital customs integration OR border remains weaponised for politics.</div>
             </div>
+        </div>
+    </section>
+
+    <!-- DL Ecosystem & Capital -->
+    <section class="section section-white">
+        <h2 class="section-title animate-on-scroll">Ecosystem & Capital Structure</h2>
+        <p class="section-subtitle animate-on-scroll">Target players, funders, capital stack rationale, stakeholders, and enabling policies per commodity. Hover <span style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--grn);color:white;font-size:9px;font-weight:700;">i</span> for capital structure rationale.</p>
+
+        <div class="dl-eco-grid animate-on-scroll">
+
+            <!-- Aquaculture -->
+            <div class="dl-eco-card">
+                <div class="dl-eco-header"><h3>🐟 Aquaculture (Fish)</h3><div class="dl-eco-badge">$16-25M</div></div>
+                <table class="dl-eco-table"><tbody>
+                    <tr><td class="dl-eco-label">🎯 Players</td><td><strong>Yalelo</strong> (Zambia model) · <strong>Tropo Farms</strong> (Ghana) · <strong>De Heus/Koudijs</strong> (feed, 120Kt) · <strong>WorldFish</strong> (GIFT genetics) · <strong>PSTACI</strong> (CIV govt programme)</td></tr>
+                    <tr><td class="dl-eco-label">💰 Funders</td><td><strong>AfDB ProDeCAP</strong> ($25.6M) · <strong>IFC</strong> · <strong>FMO</strong> · <strong>BII/FCDO</strong> · <strong>Acumen</strong></td></tr>
+                    <tr class="dl-cap-row"><td class="dl-eco-label">🏗️ Capital</td><td>
+                        <strong>Equity 35-40%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Greenfield in nascent CIV market — zero track record, so equity bears first-loss to attract any debt.</span></span>
+                        → <strong>Concessional 30%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Commercial banks won't touch CIV aquaculture yet. Below-market rates (3-5%) needed during 3-year scale-up.</span></span>
+                        → <strong>First-loss 15%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">AfDB ProDeCAP funds hatchery &amp; genetics — public good infrastructure no single investor funds alone.</span></span>
+                        → <strong>TA 15%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">WorldFish genetics, outgrower training, SPS compliance — all non-commercial costs, must be grant-funded.</span></span>
+                    </td></tr>
+                    <tr><td class="dl-eco-label">🏛️ Stakeholders</td><td><strong>CIV Min. Fisheries</strong> · <strong>FIRCA</strong> · <strong>ECOWAS Commission</strong> · <strong>Nigeria Fed. Min. Agriculture</strong></td></tr>
+                    <tr><td class="dl-eco-label">📜 Policies</td><td><strong>PSTACI</strong> (F.CFA 825B programme) · <strong>ECOWAS ETLS</strong> (0% tariff) · <strong>CIV Investment Code 2018</strong> (tax holidays) · <strong>Nigeria 10-20% fish CET</strong></td></tr>
+                </tbody></table>
+            </div>
+
+            <!-- Tomato -->
+            <div class="dl-eco-card">
+                <div class="dl-eco-header"><h3>🍅 Tomato Paste</h3><div class="dl-eco-badge">$8-15M</div></div>
+                <table class="dl-eco-table"><tbody>
+                    <tr><td class="dl-eco-label">🎯 Players</td><td><strong>GBfoods</strong> (Gino brand, offtaker) · <strong>Dangote Tomato</strong> · <strong>Tomato Jos</strong> · <strong>Erisco Foods</strong> · <strong>Ghana contract farmers</strong> (Upper East)</td></tr>
+                    <tr><td class="dl-eco-label">💰 Funders</td><td><strong>IFC</strong> (agri-processing) · <strong>AgDevCo</strong> · <strong>Afreximbank</strong> · <strong>FCDO/BII</strong> · <strong>USAID Feed the Future</strong></td></tr>
+                    <tr class="dl-cap-row"><td class="dl-eco-label">🏗️ Capital</td><td>
+                        <strong>Equity 35%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Operator skin-in-game. Equity alignment ensures throughput optimisation, not just drawing on debt.</span></span>
+                        → <strong>Senior debt 40%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Afreximbank — established commodity, processing assets as collateral. Nigeria 50% tariff = bankable margin protection.</span></span>
+                        → <strong>First-loss 15%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Ghana→Nigeria carries border closure risk (2019 precedent). No lender takes that naked — grant absorbs PE tail risk.</span></span>
+                        → <strong>TA 10%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Contract farming setup (8K+ farmers), paste-grade quality grading, SPS harmonisation — all pre-commercial costs.</span></span>
+                    </td></tr>
+                    <tr><td class="dl-eco-label">🏛️ Stakeholders</td><td><strong>Ghana MoFA</strong> (1D1F) · <strong>Nigeria SON</strong> · <strong>ECOWAS SPS Committee</strong> · <strong>Ghana FDA</strong></td></tr>
+                    <tr><td class="dl-eco-label">📜 Policies</td><td><strong>Nigeria 50% paste tariff</strong> (protective wall) · <strong>ECOWAS CET</strong> · <strong>Ghana 1D1F</strong> (co-investment) · <strong>Border closure precedent</strong> (2019-20)</td></tr>
+                </tbody></table>
+            </div>
+
+            <!-- Onions -->
+            <div class="dl-eco-card">
+                <div class="dl-eco-header"><h3>🧅 Onions</h3><div class="dl-eco-badge">$5-10M</div></div>
+                <table class="dl-eco-table"><tbody>
+                    <tr><td class="dl-eco-label">🎯 Players</td><td><strong>Niger cooperatives</strong> (Agadez, Tahoua) · <strong>Burkina aggregators</strong> (Bobo-Dioulasso) · <strong>Ghana Wholesale Markets</strong> · <strong>Borderless Alliance</strong> · Displacing <strong>Chinese imports</strong> ($11.2M)</td></tr>
+                    <tr><td class="dl-eco-label">💰 Funders</td><td><strong>FCDO</strong> · <strong>USAID Feed the Future</strong> · <strong>AfDB</strong> (cold stores) · <strong>Afreximbank</strong> · <strong>W. Africa Trade Hub</strong> (USAID)</td></tr>
+                    <tr class="dl-cap-row"><td class="dl-eco-label">🏗️ Capital</td><td>
+                        <strong>Grant/TA 60-70%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Formalisation play, not asset build. $107M already flows informally — investment makes it visible, bankable, and loss-reducing. Mostly public goods.</span></span>
+                        → <strong>Cold storage $2-3M</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">40% post-harvest loss → &lt;10% with cold chain. Hard asset, low utilisation risk — onion volumes are proven. Blended DFI + grant.</span></span>
+                        → <strong>Working capital $3-5M</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Once formalised, banks lend against visible flows. Afreximbank or local banks provide revolving credit backed by warehouse receipts.</span></span>
+                    </td></tr>
+                    <tr><td class="dl-eco-label">🏛️ Stakeholders</td><td><strong>Niger Min. Commerce</strong> · <strong>Ghana FDA</strong> · <strong>ECOWAS ETLS Secretariat</strong> · <strong>Borderless Alliance</strong> · <strong>Burkina JUNTA</strong> (HIGH RISK)</td></tr>
+                    <tr><td class="dl-eco-label">📜 Policies</td><td><strong>ECOWAS ETLS</strong> (0% duty) · <strong>Niger export licensing</strong> (ban risk) · <strong>Burkina JUNTA instability</strong> (transit risk) · <strong>AfCFTA Guided Trade Initiative</strong></td></tr>
+                </tbody></table>
+            </div>
+
+            <!-- ColdChainCo -->
+            <div class="dl-eco-card">
+                <div class="dl-eco-header"><h3>❄️ ColdChainCo</h3><div class="dl-eco-badge">$10-15M</div></div>
+                <table class="dl-eco-table"><tbody>
+                    <tr><td class="dl-eco-label">🎯 Players</td><td><strong>New SPV</strong> (Abidjan hub + Sèmè-Kraké hub + reefer fleet) · <strong>ColdHubs Nigeria</strong> (solar model) · <strong>InspiraFarms</strong> · <strong>Solar Freeze</strong> · <strong>TradeMark Africa</strong></td></tr>
+                    <tr><td class="dl-eco-label">💰 Funders</td><td><strong>IFC InfraVentures</strong> · <strong>AfDB</strong> · <strong>FMO</strong> · <strong>PIDG/GuarantCo</strong> · <strong>BII/CDC</strong> · <strong>Afreximbank FEDA</strong></td></tr>
+                    <tr class="dl-cap-row"><td class="dl-eco-label">🏗️ Capital</td><td>
+                        <strong>Equity 30%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Infrastructure SPV — equity anchors the vehicle and provides governance. IFC InfraVentures as catalytic first-mover.</span></span>
+                        → <strong>Senior debt 40%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Cold stores + reefer fleet = hard assets, bankable collateral. AfDB/FMO at 10-15yr tenor. Multi-commodity utilisation de-risks throughput.</span></span>
+                        → <strong>Mezzanine 20%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Bridges equity-debt gap. DFIs (FMO, BII) comfortable here — infra risk profile + development impact. Quasi-equity with upside if utilisation &gt;60%.</span></span>
+                        → <strong>TA 10%</strong><span class="dl-eco-tip"><span class="dl-eco-tip-icon">i</span><span class="dl-eco-tip-text">Sèmè-Kraké digital green lane, SPS mutual recognition, border protocols — public goods that unlock all corridor trade.</span></span>
+                    </td></tr>
+                    <tr><td class="dl-eco-label">🏛️ Stakeholders</td><td><strong>ECOWAS Transport</strong> · <strong>Benin & Nigeria Customs</strong> · <strong>TradeMark Africa</strong> · <strong>Port of Abidjan</strong> · <strong>Borderless Alliance</strong></td></tr>
+                    <tr><td class="dl-eco-label">📜 Policies</td><td><strong>AfCFTA Guided Trade</strong> · <strong>ECOWAS Free Movement Protocol</strong> · <strong>Border closure precedent</strong> (2019-20) · <strong>ECOWAS CET</strong> · <strong>Benin transit regime</strong></td></tr>
+                </tbody></table>
+            </div>
+
         </div>
     </section>
 
