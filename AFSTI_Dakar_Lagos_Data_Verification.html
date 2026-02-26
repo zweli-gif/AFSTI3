@@ -223,6 +223,86 @@
             color: var(--text);
             line-height: 1.6;
         }
+
+        /* Ecosystem table styles */
+        .eco-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .eco-table th {
+            font-family: 'Bitter', serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            background: var(--grn);
+            padding: 10px 14px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .eco-table td {
+            font-size: 13px;
+            padding: 10px 14px;
+            border-bottom: 1px solid #e0ddd5;
+            vertical-align: top;
+            line-height: 1.5;
+            color: var(--text);
+        }
+        .eco-table tr:nth-child(even) td { background: var(--bg); }
+        .eco-table .row-label {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--grn);
+            white-space: nowrap;
+            width: 130px;
+        }
+        .eco-table .debt-row td { background: var(--grn-light); }
+
+        /* Info tooltip for debt rationale */
+        .info-tip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        .info-tip .tip-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--grn);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .info-tip .tip-text {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            background: #1a1a1a;
+            color: white;
+            font-size: 12px;
+            line-height: 1.5;
+            padding: 10px 14px;
+            border-radius: 8px;
+            z-index: 100;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .info-tip .tip-text::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #1a1a1a;
+        }
+        .info-tip:hover .tip-text { visibility: visible; opacity: 1; }
     </style>
 </head>
 <body>
@@ -274,7 +354,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 1 of 10</span>
+        <span>Slide 1 of 14</span>
     </div>
 </div>
 
@@ -330,7 +410,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 2 of 10</span>
+        <span>Slide 2 of 14</span>
     </div>
 </div>
 
@@ -386,7 +466,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 3 of 10</span>
+        <span>Slide 3 of 14</span>
     </div>
 </div>
 
@@ -443,7 +523,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 4 of 10</span>
+        <span>Slide 4 of 14</span>
     </div>
 </div>
 
@@ -499,7 +579,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 5 of 10</span>
+        <span>Slide 5 of 14</span>
     </div>
 </div>
 
@@ -555,7 +635,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 6 of 10</span>
+        <span>Slide 6 of 14</span>
     </div>
 </div>
 
@@ -611,7 +691,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 7 of 10</span>
+        <span>Slide 7 of 14</span>
     </div>
 </div>
 
@@ -666,7 +746,203 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 8 of 10</span>
+        <span>Slide 8 of 14</span>
+    </div>
+</div>
+
+
+<!-- ============ ECOSYSTEM SLIDES ============ -->
+
+<!-- SLIDE: Aquaculture Ecosystem -->
+<div class="ppt-slide">
+    <div class="slide-header">
+        <div class="slide-title">Aquaculture — Ecosystem & Capital</div>
+        <div class="slide-badge badge-vc">Ecosystem Map</div>
+    </div>
+    <table class="eco-table">
+        <thead><tr><th style="width:130px">Dimension</th><th>Details</th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="row-label">🎯 Target Players</td>
+                <td><strong>Yalelo</strong> (Zambia — proven cage culture model to replicate) · <strong>Tropo Farms</strong> (Ghana — Lake Volta tilapia) · <strong>De Heus / Koudijs</strong> (Abidjan feed factory, 120K t capacity) · <strong>WorldFish Center</strong> (GIFT tilapia genetics) · <strong>PSTACI Programme</strong> (CIV govt F.CFA 825B aquaculture transformation)</td>
+            </tr>
+            <tr>
+                <td class="row-label">💰 Target Funders</td>
+                <td><strong>AfDB ProDeCAP</strong> ($25.6M hatchery/broodstock) · <strong>IFC</strong> (aquaculture portfolio expanding in SSA) · <strong>FMO</strong> (Dutch DFI — feed/agri-processing focus) · <strong>BII / FCDO</strong> (UK development finance — food systems mandate) · <strong>Acumen</strong> (impact — smallholder outgrower model)</td>
+            </tr>
+            <tr class="debt-row">
+                <td class="row-label">🏗️ Capital Structure</td>
+                <td>
+                    <strong>Equity 35-40% ($6-10M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Greenfield in nascent CIV aquaculture market — zero commercial track record locally, so equity must bear first-loss risk to attract any debt.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Concessional debt 30% ($5-8M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Commercial banks won't touch aquaculture in CIV yet. Below-market rates (3-5%) from AfDB/IFC needed to make unit economics work during 3-year scale-up.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>First-loss / grant 15% ($2-4M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">De-risks equity + debt layers. AfDB ProDeCAP provides this for hatchery and genetics — public good infrastructure that no single investor will fund alone.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>TA 15% ($2-4M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Genetics (WorldFish), outgrower cage farmer training, SPS compliance for cross-border export — all non-commercial costs that must be grant-funded.</span></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row-label">🏛️ Key Stakeholders</td>
+                <td><strong>CIV Ministry of Fisheries</strong> (PSTACI programme owner) · <strong>FIRCA</strong> (CIV agriculture fund) · <strong>CIV Customs</strong> (export facilitation) · <strong>ECOWAS Commission</strong> (ETLS tariff preference) · <strong>Nigeria Federal Min. of Agriculture</strong> (import market access)</td>
+            </tr>
+            <tr>
+                <td class="row-label">📜 Key Policies</td>
+                <td><strong>PSTACI</strong> — CIV F.CFA 825B ($1.3B) government aquaculture transformation programme, 10-year fisheries plan · <strong>ECOWAS ETLS</strong> — 0% tariff on certified intra-regional fish trade · <strong>CIV Investment Code 2018</strong> — tax holidays for agri-processing · <strong>Nigeria fish import duty</strong> — 10-20% CET creates import substitution incentive</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="slide-footer">
+        <span>AFSTI Dakar-Lagos Corridor</span>
+        <span>Slide 9 of 14</span>
+    </div>
+</div>
+
+<!-- SLIDE: Tomato Ecosystem -->
+<div class="ppt-slide">
+    <div class="slide-header">
+        <div class="slide-title">Tomato Paste — Ecosystem & Capital</div>
+        <div class="slide-badge badge-vc">Ecosystem Map</div>
+    </div>
+    <table class="eco-table">
+        <thead><tr><th style="width:130px">Dimension</th><th>Details</th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="row-label">🎯 Target Players</td>
+                <td><strong>GBfoods</strong> (Gino brand — dominant paste brand in Nigeria, potential offtaker) · <strong>Dangote Tomato Processing</strong> (Nigeria — existing capacity, seeking reliable supply) · <strong>Tomato Jos</strong> (Nigeria — integrated farm-to-can model) · <strong>Erisco Foods</strong> (Nigeria — domestic paste manufacturer) · <strong>Ghana contract farmer cooperatives</strong> (Upper East, Northern Region)</td>
+            </tr>
+            <tr>
+                <td class="row-label">💰 Target Funders</td>
+                <td><strong>IFC</strong> (agri-processing portfolio) · <strong>AgDevCo</strong> (early-stage agri catalyst) · <strong>Afreximbank</strong> (intra-African trade finance — natural fit) · <strong>FCDO / BII</strong> (food systems + trade) · <strong>USAID Feed the Future</strong> (Ghana horticulture programmes)</td>
+            </tr>
+            <tr class="debt-row">
+                <td class="row-label">🏗️ Capital Structure</td>
+                <td>
+                    <strong>Equity 35% ($3-5M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Processing facility needs committed operator with skin in the game. Equity alignment ensures the operator optimises throughput, not just draws on debt.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Senior debt 40% ($3-6M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Afreximbank senior debt — established commodity with tangible processing assets as collateral. ETLS preference + Nigeria 50% tariff on imports = bankable margin protection.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>First-loss 15% ($1-2M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Ghana→Nigeria trade carries border closure risk (2019 precedent). No commercial lender takes that naked — first-loss grant absorbs the political economy tail risk.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>TA grant 10% ($1-1.5M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Contract farming setup (8K+ farmers), paste-grade quality grading systems, SPS harmonisation between Ghana & Nigeria — all pre-commercial costs.</span></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row-label">🏛️ Key Stakeholders</td>
+                <td><strong>Ghana Min. of Food & Agriculture</strong> (1D1F programme) · <strong>Nigeria SON</strong> (Standards Organisation — product certification) · <strong>ECOWAS SPS Committee</strong> (mutual recognition) · <strong>Ghana Food & Drugs Authority</strong> (export certification) · <strong>NiTDA</strong> (trade facilitation)</td>
+            </tr>
+            <tr>
+                <td class="row-label">📜 Key Policies</td>
+                <td><strong>Nigeria 50% tariff on imported paste</strong> — creates massive protective wall for regional production · <strong>ECOWAS CET</strong> — lower duty for ECOWAS-origin products · <strong>Ghana 1D1F</strong> (One District One Factory) — government co-investment in processing · <strong>Nigeria border closure precedent (2019-20)</strong> — existential risk requiring first-loss protection</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="slide-footer">
+        <span>AFSTI Dakar-Lagos Corridor</span>
+        <span>Slide 10 of 14</span>
+    </div>
+</div>
+
+<!-- SLIDE: Onions Ecosystem -->
+<div class="ppt-slide">
+    <div class="slide-header">
+        <div class="slide-title">Onions — Ecosystem & Capital</div>
+        <div class="slide-badge badge-vc">Ecosystem Map</div>
+    </div>
+    <table class="eco-table">
+        <thead><tr><th style="width:130px">Dimension</th><th>Details</th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="row-label">🎯 Target Players</td>
+                <td><strong>Niger onion traders</strong> (informal — Agadez, Tahoua, Maradi cooperatives) · <strong>Burkina Faso aggregators</strong> (Bobo-Dioulasso hub) · <strong>Ghana Wholesale Markets</strong> (Accra, Kumasi — demand anchors) · <strong>Chinese onion importers</strong> ($11.2M to Ghana — the volumes to displace) · <strong>Borderless Alliance</strong> (trade facilitation NGO)</td>
+            </tr>
+            <tr>
+                <td class="row-label">💰 Target Funders</td>
+                <td><strong>FCDO</strong> (trade facilitation + resilience) · <strong>USAID Feed the Future</strong> (West Africa horticulture) · <strong>AfDB</strong> (infrastructure — cold stores) · <strong>Afreximbank</strong> (intra-African trade working capital) · <strong>West Africa Trade & Investment Hub</strong> (USAID facility)</td>
+            </tr>
+            <tr class="debt-row">
+                <td class="row-label">🏗️ Capital Structure</td>
+                <td>
+                    <strong>Grant / TA — core (60-70%)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">This is a formalisation play, not an asset build. $107M trade already flows informally — the investment is about making it visible, bankable, and loss-reducing. Mostly public goods.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Cold storage infra ($2-3M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">40% post-harvest loss without cold chain → &lt;10% with. Hard asset, but low utilisation risk because onion volumes are proven. Blended DFI + grant funding.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Working capital ($3-5M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Once trade is formalised, commercial banks can lend against visible flows. Afreximbank or local banks provide revolving credit to aggregators backed by warehouse receipts.</span></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row-label">🏛️ Key Stakeholders</td>
+                <td><strong>Niger Min. of Commerce</strong> (export licensing) · <strong>Ghana Food & Drugs Authority</strong> (SPS certification) · <strong>ECOWAS Trade Lib. Scheme Secretariat</strong> (ETLS enforcement) · <strong>Borderless Alliance</strong> (corridor monitoring) · <strong>Burkina Faso JUNTA authorities</strong> (transit permissions — HIGH RISK)</td>
+            </tr>
+            <tr>
+                <td class="row-label">📜 Key Policies</td>
+                <td><strong>ECOWAS ETLS</strong> — 0% duty on intra-regional agri products · <strong>Niger export licensing</strong> — risk of ad hoc bans during domestic shortage · <strong>Burkina Faso JUNTA instability</strong> — transit risk for overland routes · <strong>Ghana Plant Quarantine Act</strong> — SPS inspection requirements · <strong>AfCFTA Guided Trade Initiative</strong> — pilot for simplified trade rules</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="slide-footer">
+        <span>AFSTI Dakar-Lagos Corridor</span>
+        <span>Slide 11 of 14</span>
+    </div>
+</div>
+
+<!-- SLIDE: ColdChainCo Ecosystem -->
+<div class="ppt-slide">
+    <div class="slide-header">
+        <div class="slide-title">ColdChainCo — Ecosystem & Capital</div>
+        <div class="slide-badge badge-infra">Infrastructure</div>
+    </div>
+    <table class="eco-table">
+        <thead><tr><th style="width:130px">Dimension</th><th>Details</th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="row-label">🎯 Target Players</td>
+                <td><strong>New SPV</strong> (corridor cold chain vehicle — Abidjan hub + Sèmè-Kraké hub + reefer fleet) · <strong>ColdHubs Nigeria</strong> (solar cold room model — potential JV partner) · <strong>InspiraFarms</strong> (modular cold chain systems for perishables) · <strong>Solar Freeze</strong> (Kenya — solar cold storage, replicable model) · <strong>TradeMark Africa</strong> (border facilitation + digital tracking)</td>
+            </tr>
+            <tr>
+                <td class="row-label">💰 Target Funders</td>
+                <td><strong>IFC InfraVentures</strong> (infrastructure equity — early stage) · <strong>AfDB</strong> (infrastructure + trade facilitation mandate) · <strong>FMO</strong> (cold chain/logistics) · <strong>PIDG / GuarantCo</strong> (infrastructure de-risking) · <strong>BII / CDC</strong> (UK DFI — climate-smart infrastructure) · <strong>Afreximbank FEDA</strong> (Fund for Export Development in Africa)</td>
+            </tr>
+            <tr class="debt-row">
+                <td class="row-label">🏗️ Capital Structure</td>
+                <td>
+                    <strong>Equity 30% ($3-5M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Infrastructure SPV — equity anchors the vehicle and provides governance. IFC InfraVentures or impact investors take this layer as catalytic first-movers.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Senior debt 40% ($4-6M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Cold stores + reefer fleet are hard assets with bankable collateral. AfDB or FMO provide 10-15yr tenor at concessional rates. Multi-commodity utilisation de-risks throughput.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>Mezzanine 20% ($2-3M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Bridges equity-debt gap. DFIs (FMO, BII) comfortable here — infrastructure risk profile with development impact. Quasi-equity with upside if utilisation exceeds 60% threshold.</span></span>
+                    &nbsp;→&nbsp;
+                    <strong>TA grant 10% ($1-1.5M)</strong>
+                    <span class="info-tip"><span class="tip-icon">i</span><span class="tip-text">Sèmè-Kraké digital green lane, SPS mutual recognition systems, and border cold chain protocols are public goods — no private investor funds these but they unlock all corridor trade.</span></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row-label">🏛️ Key Stakeholders</td>
+                <td><strong>ECOWAS Transport Directorate</strong> (corridor transit protocols) · <strong>Benin & Nigeria Customs</strong> (Sèmè-Kraké operations) · <strong>TradeMark Africa</strong> (border facilitation expertise) · <strong>Port of Abidjan</strong> (Hub 1 location) · <strong>Borderless Alliance</strong> (corridor monitoring & advocacy)</td>
+            </tr>
+            <tr>
+                <td class="row-label">📜 Key Policies</td>
+                <td><strong>AfCFTA Guided Trade Initiative</strong> — pilot simplified trade procedures · <strong>ECOWAS Free Movement Protocol</strong> — enables reefer transit across borders · <strong>Nigeria border closure precedent (2019-20)</strong> — existential risk for Sèmè-Kraké hub · <strong>ECOWAS CET</strong> — tariff preference for corridor-origin goods · <strong>Benin transit regime</strong> — corridor transit fees and informal levies</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="slide-footer">
+        <span>AFSTI Dakar-Lagos Corridor</span>
+        <span>Slide 12 of 14</span>
     </div>
 </div>
 
@@ -713,7 +989,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 9 of 10</span>
+        <span>Slide 13 of 14</span>
     </div>
 </div>
 
@@ -755,7 +1031,7 @@
     </div>
     <div class="slide-footer">
         <span>AFSTI Dakar-Lagos Corridor</span>
-        <span>Slide 10 of 10</span>
+        <span>Slide 14 of 14</span>
     </div>
 </div>
 
